@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html style="background-image: url('http://wallpapercave.com/wp/fEaDSdZ.jpg'); background-size: 100%" lang="en">
+<link rel="stylesheet" type="text/css" href="styleSheet.css">
+<head>
+    <title>Food Tracker App</title>
+    <style type="text/css">
+        body{background-color: white;}
+
+        th{padding: 5px;
+            background-color: mistyrose;
+            color: black;}
+
+        table{width: 100%;
+            border-collapse: collapse;
+            border: dashed;
+            border-color: WindowFrame;
+            position: relative;
+            align-content: center;
+            align-self: center;
+
+            }
+
+        tr{background-color: lightcyan;
+            color: black;}
+
+        #danger{background-color: red;}
+
+        tr.alt{background-color: rosybrown;}
+        body{
+            background-image: url ( "candies.jpg");
+        }
+    </style>
+    <link href="styleSheet.css">
+    <link href="script.js">
+</head>
+
+<body background="candies.jpg">
+    <h2 style="font-family: courier; text-align: center; color:salmon; font-size: xx-large"> Track Your Edibles </h2>
+<script>
+    val = 1;
+    function formChanged(){
+        foodname = document.getElementsByName("food")[0].value;
+        description = document.getElementsByName("description")[0].value;
+        dateofpurchase = document.getElementsByName("purchase")[0].value;
+        expiration = document.getElementsByName("expiration")[0].value;
+    }
+    function addCells(){
+
+        var tbl = document.getElementById("table");
+        var row = tbl.insertRow(val);
+        var fn = row.insertCell(0);
+        var d = row.insertCell(1);
+        var dop = row.insertCell(2);
+        var ep = row.insertCell(3);
+
+        if (expiration <= 3){
+            row.id = "danger"
+        }
+
+        fn.innerHTML = foodname;
+        d.innerHTML = description;
+        dop.innerHTML = dateofpurchase;
+        ep.innerHTML = expiration;
+        val = val + 1;
+
+        }
+</script>
+
+<table border="1" id="table">
+    <tr>
+        <form>
+            <th>Food Name: <input type="text" name="food" onkeyup="formChanged()" onchange="formChanged()"></th>
+            <th>Description: <input type="text" name="description" onkeyup="formChanged()" onchange="formChanged()"></th>
+            <th>Date of Purchase: <input type="text" name="purchase" onkeyup="formChanged()" onchange="formChanged()"></th>
+            <th id="btn">Shelf Life: <input type="text" name="expiration" onkeyup="formChanged()" onchange="formChanged()"></th>
+        </form>
+        <th> <button onclick="addCells()">Submit</button>
+    </tr>
+</table>
+</body>
+</html>

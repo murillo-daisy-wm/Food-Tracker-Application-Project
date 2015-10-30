@@ -1,0 +1,32 @@
+body
+    {
+    background-color: white;
+    }
+
+th
+    {
+    padding: 5px;
+    background-color: chocolate;
+    color: white;
+    }
+
+table
+    {
+    width: 100%;
+    border-collapse: collapse;
+    border: 2px solid brown;
+    }
+tr
+    {
+    background-color: sandybrown;
+    color: white;
+    }
+#danger
+    {
+    background-color: red;
+    }
+
+tr.alt
+    {
+    background-color: rosybrown;
+    }
